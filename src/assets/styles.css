@@ -1,0 +1,220 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Kumbh+Sans&display=swap');
+body, ul{
+    margin: 0 ;
+    font-family: 'Kumbh Sans', sans-serif;
+    font-size: 16px;
+}
+header{
+    height: 100px;
+    /* background: blueviolet; */
+    width: 100%;
+}
+header ul{
+    display: flex;
+    width: 80%;
+    height: 100%;
+    justify-content: space-between;
+    list-style: none;
+    align-items: center;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    border-bottom: 1px solid hsl(223, 64%, 98%);
+}
+ul{
+    padding: 0px;
+    margin: 0 auto;
+}
+header ul li{
+    padding-right: 35px;
+}
+header ul li.logo{
+    /* flex:1 */
+}
+header ul li.icon-menu{
+    display:none;
+}
+header ul li.menu{
+    flex: 1;
+}
+@media screen and (max-width: 768px){
+    header ul{
+        align-items: center;
+        /* height: 100px; */
+    }
+    header ul li{
+        padding-right: 10px;
+    }
+    header ul li.menus{
+        display: none;
+    }
+    header ul li.logo{
+        flex: 1;
+        flex-wrap: nowrap;
+    }
+    header ul li.icon-menu{
+        display: block;
+    }
+}
+header ul li.image-avatar > img{
+    height: 30px; 
+    width:30px;
+}
+.wrapper .sidebar{
+    background: hsl(0, 0%, 100%);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 100%;
+    padding: 20px 0;
+    transition: all 0.5s ease;
+}
+.wrapper .sidebar ul {
+    list-style: none;
+    display: block;
+}
+.wrapper .sidebar ul li{
+    padding-bottom: 20px;
+    color: hsl(0, 0%, 0%);
+    font-weight: 700;
+}
+.wrapper .sidebar ul li img{
+    padding-bottom: 15px;
+}
+main{
+    width: 90%;
+    margin: 0 auto;
+    height: 590px;
+    display:flex; 
+    align-items: center;
+
+}
+
+main > div.image-box{
+    display:flex; 
+    flex-direction:column; 
+    align-items:center; 
+    gap: 35px
+}
+main > div.image-box > img{
+    width: 50%; 
+    height: auto; 
+    text-align:center; 
+    border-radius: 5px
+}
+main > div.image-box > div.thumbnail-wrapper{
+    display:grid; 
+    grid-template-columns: 1fr 1fr 1fr 1fr; 
+    /* grid-template-row: 50px;  */
+    width: 50%; 
+    height: 90px; 
+    gap: 15px
+}
+/* main > div.image-box > div.thumbnail-wrapper > div.thumbnails{
+    
+} */
+main > div.image-box > div.thumbnail-wrapper > div.thumbnails >img{
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+main > div.description-wrapper{
+    display: flex;
+    flex-direction: column;
+    width: 55%;
+    gap: 5px;
+    /* justify-content: center; */
+}
+main > div.description-wrapper > div.description-info  p.header{
+    color:hsl(26, 100%, 55%); 
+    text-transform:uppercase; 
+    font-weight:bolder
+}
+main > div.description-wrapper > div.description-info  p{
+    color: hsl(220, 14%, 75%);
+}
+
+main > div.description-wrapper > div.description-price{
+    display:flex; 
+    /* align-items: center; */
+    justify-content: space-between;
+    flex-wrap: wrap;
+    
+    flex-direction:column
+}
+main > div.description-wrapper > div.description-price > div{
+    display:flex; 
+    align-items: center; 
+    /* justify-content:space-between */
+}
+main > div.description-wrapper > div.description-price > div > p{
+    margin-left: 20px;
+    background-color: hsl(223, 64%, 98%);
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: hsl(26, 100%, 55%);
+}
+main > div.description-wrapper > div.description-price > s{
+    color: hsl(220, 14%, 75%);
+}
+
+main > div.description-wrapper > div.description-action-wrapper{
+    display: flex;
+}
+main > div.description-wrapper > div.description-action-wrapper > div.description-action{
+    display:flex; 
+    justify-content: space-around; 
+    width: 40%; 
+    align-items:center; 
+    background: hsl(223, 64%, 98%); 
+    border-radius: 5px; 
+    height:42px;
+}
+main > div.description-wrapper > div.description-action-wrapper > div.description-button{
+    width:100%; 
+    margin-left: 10px;
+}
+main > div.description-wrapper > div.description-action-wrapper > div.description-button button{
+    height:42px; 
+    width:85%; 
+    border-radius: 5px; 
+    border:none; 
+    background-color:  hsl(26, 100%, 55%); 
+    color: hsl(0, 0%, 100%)
+}
+
+
+@media screen and (max-width: 768px){
+    main{
+        flex-direction: column;
+        width: 100%;
+
+    }
+    main > div.description-wrapper{
+        width: 90%;
+    }
+    main > div.description-wrapper > div.description-action-wrapper{
+        flex-direction: column;
+        gap: 10px;
+    }
+    main > div.description-wrapper > div.description-price{
+        flex-direction: row;
+        align-items: center;
+    }
+    main > div.description-wrapper > div.description-action-wrapper > div.description-action{
+        width: 100%;
+    }
+    main > div.description-wrapper > div.description-action-wrapper > div.description-button{
+        margin-left: 0;
+    }
+    main > div.description-wrapper > div.description-action-wrapper > div.description-button button{
+        width: 100%;
+    }
+    main > div.image-box > div.thumbnail-wrapper{
+        display:none
+    }
+    main > div.image-box > img {
+        width: 100%;
+        border-radius: 0px;
+    }
+}
