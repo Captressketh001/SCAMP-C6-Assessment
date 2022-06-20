@@ -82,9 +82,9 @@ header ul li.image-avatar > img{
     padding-bottom: 15px;
 }
 main{
-    width: 90%;
-    margin: 0 auto;
-    height: 590px;
+    /* width: 90%;
+    margin: 0 auto; */
+    height: 650px;
     display:flex; 
     align-items: center;
 
