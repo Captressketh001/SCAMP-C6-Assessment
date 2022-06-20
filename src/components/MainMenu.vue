@@ -35,7 +35,7 @@
                     <!-- <p></p> -->
                 </div>
                 <div class="description-button" style="">
-                    <button style="">Add to cart</button>
+                    <button style=""><img src="/images/icon-cart-white.svg"> Add to cart</button>
                 </div>
             </div>
             
