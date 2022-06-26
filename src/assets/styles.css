@@ -40,6 +40,7 @@ header ul li.menu{
     header ul{
         align-items: center;
         /* height: 100px; */
+        width: 90%;
     }
     header ul li{
         padding-right: 10px;
@@ -68,7 +69,6 @@ header ul li.image-avatar > img{
     height: 100%;
     padding: 20px 0;
     transition: all 0.5s ease;
-    z-index: 1;
 }
 .wrapper .sidebar ul {
     list-style: none;
