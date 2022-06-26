@@ -5,7 +5,7 @@ body, ul{
     font-size: 16px;
 }
 header{
-    height: 100px;
+    height: 80px;
     /* background: blueviolet; */
     width: 100%;
 }
@@ -83,7 +83,7 @@ header ul li.image-avatar > img{
 }
 main{
     width: 80%;
-    margin: 0 auto;
+    /* margin: 0 auto; */
     height: 650px;
     display:flex; 
     align-items: center;
@@ -182,7 +182,9 @@ main > div.description-wrapper > div.description-action-wrapper > div.descriptio
     background-color:  hsl(26, 100%, 55%); 
     color: hsl(0, 0%, 100%)
 }
-
+.previous, .next{
+    display: none;
+}
 
 @media screen and (max-width: 768px){
     main{
@@ -217,4 +219,33 @@ main > div.description-wrapper > div.description-action-wrapper > div.descriptio
         width: 100%;
         border-radius: 0px;
     }
+    main > div.image-box  img.previous, main > div.image-box  img.next{
+        background-color: white;
+    border-radius: 50%;
+    padding: 10px 12px;
+    position: absolute;
+    z-index: 100;
+    cursor: pointer;
+    width: auto;
+    display: block;
+    }
+    /* .previous,
+  .next {
+    background-color: white;
+    border-radius: 50%;
+    padding: 10px 12px;
+    position: absolute;
+    z-index: 100;
+    cursor: pointer;
+    width: auto;
+    display: block;
+  } */
+  main > div.image-box > img.previous {
+    left: 1.5rem;
+    top: 15.5rem;
+  }
+  main > div.image-box > img.next {
+    right: 1.5rem;
+    top: 15.5rem;
+  }
 }

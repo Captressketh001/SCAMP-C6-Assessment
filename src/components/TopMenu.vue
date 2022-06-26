@@ -11,7 +11,7 @@
            <li class="shopping-cart"><img src="/images/icon-cart.svg" alt=""></li>
            <li class="image-avatar"><img src="/images/image-avatar.png" alt=""></li>
        </ul>
-        <div class="wrapper" v-show="show == true" >
+        <div class="wrapper" v-show="show == true">
         <!--Top menu -->
         <div class="sidebar">
            <ul>
@@ -23,7 +23,6 @@
             <li>Contact</li>
            </ul>
         </div>
-
     </div>
     </header>
     
