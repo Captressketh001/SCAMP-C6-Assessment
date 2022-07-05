@@ -36,7 +36,7 @@ header ul li.icon-menu{
 }
 header ul li.menu{
     /* flex: auto; */
-    flex: 0 2 67%
+    flex: 1
     
 }
 li.menus{
