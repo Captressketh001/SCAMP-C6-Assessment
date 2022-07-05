@@ -26,15 +26,21 @@ ul{
 }
 header ul li{
     padding-right: 35px;
+    cursor:pointer;
 }
-header ul li.logo{
-    /* flex:1 */
+header ul li.menus:hover{
+    border-bottom: 5px solid hsl(26, 100%, 55%);
 }
 header ul li.icon-menu{
     display:none;
 }
 header ul li.menu{
-    flex: 1;
+    /* flex: auto; */
+    flex: 0 2 67%
+    
+}
+li.menus{
+    padding: 30px;
 }
 @media screen and (max-width: 768px){
     header ul{
@@ -81,6 +87,52 @@ header ul li.image-avatar > img{
 }
 .wrapper .sidebar ul li img{
     padding-bottom: 15px;
+}
+/* .cart-wrapper {
+     width: 36rem;
+    position: absolute;
+    left: 50%;
+    top: calc(100% + 1rem);
+    transform: translateX(-50%) scaleY(0);
+    -webkit-transform: translateX(-50%) scaleY(0);
+    transform-origin: top;
+    -webkit-transform-origin: top;
+    z-index: 9999;
+    background-color: red;
+    border-radius: 1rem;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.25);
+    padding-bottom: 2.7rem;
+    transition: all 0.2s ease-in-out;
+} */
+.cart-wrapper{
+    width: 22rem;
+    position: absolute;
+    left: 65%;
+    /* top: calc(100% + 1rem); */
+    top: 64px;
+    z-index: 9999;
+    background-color: #fff;
+    border-radius: 1rem;
+    box-shadow: 0 5px 20px rgb(0 0 0 / 25%);
+    padding-bottom: 2rem;
+    transition: all 0.2s ease-in-out;
+}
+.cart h3{
+    padding: 1rem 1.4rem;
+    border-bottom: 1px solid hsl(220, 14%, 75%);
+}
+.cart div img.img-thumb{
+    width: 20%;
+    height: auto;
+    border-radius: 0.5em;
+}
+.checkout-button button{
+    height:42px; 
+    /* width:85%;  */
+    border-radius: 0.8rem; 
+    border:none; 
+    background-color:  hsl(26, 100%, 55%); 
+    color: hsl(0, 0%, 100%)
 }
 main{
     width: 80%;
@@ -188,6 +240,13 @@ main > div.description-wrapper > div.description-action-wrapper > div.descriptio
 }
 
 @media screen and (max-width: 768px){
+    .cart-wrapper{
+        width: 90%;
+        left: 6%;
+        /* height: auto; */
+        top: 8em;
+        /* padding-bottom: 4em; */
+    }
     main{
         flex-direction: column;
         width: 100%;
