@@ -42,6 +42,19 @@ header ul li.menu{
 li.menus{
     padding: 30px;
 }
+header ul li.shopping-cart span{
+    position: relative;
+    top: -16px;
+    left: -9px;
+    /* border: 1px solid red; */
+    /* padding: 4px; */
+    /* border-radius: 9%; */
+    /* height: 16px; */
+    /* width: 2px; */
+    background: hsl(26, 100%, 55%);
+    border-radius: 55px;
+    padding: 0px 8px;
+}
 @media screen and (max-width: 768px){
     header ul{
         align-items: center;

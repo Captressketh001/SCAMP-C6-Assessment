@@ -14,33 +14,33 @@
                 <div class="thumbnails" @click="currentSlide(4)"><img src="/images/image-product-4-thumbnail.jpg" alt=""></div>
             </div>
         </div>
-        <div class="description-wrapper">
+        <div class="description-wrapper" v-for="(product,ix) in products" :key="ix">
             <div class="description-info">
                 <p class="header">Sneaker Company</p>
-                <h1>Fall Limited Edition Sneakers</h1>
+                <h1>Fall Edition Limited Sneakers</h1>
                 <p>These low-profile sneakers are your perfect casual wear companion.
                     Featuring a durable rubber outer sole, they'll withstand everything the weather can offer</p>
             </div>
             <div class="description-price">
                 <div style="">
-                    <h1>$125.00</h1>
+                    <h1>${{product.discounted_price}}.00</h1>
                     <p>50%</p>
                 </div>
                 
-                <s>$250.00</s>
+                <s>${{product.price}}.00</s>
             </div>
             
             
             <div class="description-action-wrapper">
                 <div class="description-action" style="">
                    
-                    <p> <img src="/images/icon-minus.svg" alt=""></p>
-                    <p> 0 </p>
-                    <p> <img src="/images/icon-plus.svg" alt=""></p>
+                    <p  @click="decreaseItem"> <img src="/images/icon-minus.svg" alt=""></p>
+                    <p > {{ counter }} </p>
+                    <p @click="increaseItem"> <img src="/images/icon-plus.svg" alt=""></p>
                     <!-- <p></p> -->
                 </div>
                 <div class="description-button" style="">
-                    <button style=""><img src="/images/icon-cart-white.svg"> Add to cart</button>
+                    <button style="" @click="addProductToCart(product)"><img src="/images/icon-cart-white.svg"> Add to cart</button>
                 </div>
             </div>
             
@@ -69,14 +69,56 @@
 </template>
 
 <script>
+import * as $ from "jquery";
 export default {
     name: 'MainMenu',
     data (){
         return {
-            slideIndex: 1
+            slideIndex: 1,
         }
     },
+    computed:{
+        products(){
+         return this.$store.state.products
+        },
+        counter(){
+          return this.$store.state.counter
+        },
+    },
     methods: {
+      increaseItem(){
+        this.$store.dispatch('increaseItem')
+      },
+       decreaseItem(){
+        this.$store.dispatch('decreaseItem')
+      },
+      increaseQty(product, index){
+        this.$store.getters.cartProducts.forEach(i => {            
+            if (i.id == product.id) {
+              
+                  $('#qty'+ index).text(++(i.quantity))  
+                  this.updateCartLocalStorage()                 
+          } 
+        })
+    },
+    decreaseQty(product, index){
+        this.$store.getters.cartProducts.forEach(i => {            
+            if (i.id == product.id) {
+                if (i.quantity == 1){
+                    this.$store.getters.cartProducts.forEach((i, index) => {
+                        if (i.id == product.id) {
+                            this.$store.getters.cartProducts.splice(index, 1)               
+                        }
+                    });
+                }else{
+                    $('#qty'+ index).text(--(i.quantity))
+                }
+            }   
+        });
+    },
+      addProductToCart(products){
+        this.$store.dispatch('addProductToCart', products)
+      },
         plusSlides(n){
             this.showSlides(this.slideIndex += n);
         },
@@ -107,6 +149,9 @@ export default {
     },
     mounted() {
          this.showSlides(this.slideIndex);
+    },
+    created(){
+      this.$store.dispatch('fetchProducts')
     }
 //     var slideIndex = 1;
 // showSlides(slideIndex);
