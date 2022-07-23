@@ -1,8 +1,8 @@
 <template>
   <nav>
     <div>
-        <img src="/images/icon-menu.svg" alt="" style="display:none"/>
-        <img src="/images/logo.svg" alt="" />
+        <img src="/images/icon-menu.svg" alt="menu" style="display:none"/>
+        <img src="/images/logo.svg" alt="logo" />
     </div>
     <ul>
       <li class="menus">Collections</li>
@@ -12,8 +12,8 @@
       <li class="menus">Contact</li>
     </ul>
     <div>
-        <img src="/images/icon-cart.svg" alt="" @click="showCart" />
-        <img src="/images/image-avatar.png" alt="" class="image"/>
+        <img src="/images/icon-cart.svg" alt="cart" @click="showCart" />
+        <img src="/images/image-avatar.png" alt="avatar" class="image"/>
     </div>
   </nav>
 </template>

@@ -1,17 +1,17 @@
 <template>
     <main>
         <div class="image-box">
-            <img src="/images/icon-previous.svg" alt="" class="previous" @click="plusSlides(-1)">
-            <img src="/images/image-product-1.jpg" alt="" class="slides">
-            <img src="/images/image-product-2.jpg" alt="" class="slides">
-            <img src="/images/image-product-3.jpg" alt="" class="slides">
-            <img src="/images/image-product-4.jpg" alt="" class="slides">
-             <img src="/images/icon-next.svg" alt="" class="next" @click="plusSlides(1)">
+            <img src="/images/icon-previous.svg" alt="prev" class="previous" @click="plusSlides(-1)">
+            <img src="/images/image-product-1.jpg" alt="product-1" class="slides">
+            <img src="/images/image-product-2.jpg" alt="product-2" class="slides">
+            <img src="/images/image-product-3.jpg" alt="product-3" class="slides">
+            <img src="/images/image-product-4.jpg" alt="product-4" class="slides">
+             <img src="/images/icon-next.svg" alt="next" class="next" @click="plusSlides(1)">
             <div class="thumbnail-wrapper">
-                <div class="thumbnails" @click="currentSlide(1)"><img src="/images/image-product-1-thumbnail.jpg" alt=""></div>
-                <div class="thumbnails" @click="currentSlide(2)"><img src="/images/image-product-2-thumbnail.jpg" alt=""></div>
-                <div class="thumbnails" @click="currentSlide(3)"><img src="/images/image-product-3-thumbnail.jpg" alt=""></div>
-                <div class="thumbnails" @click="currentSlide(4)"><img src="/images/image-product-4-thumbnail.jpg" alt=""></div>
+                <div class="thumbnails" @click="currentSlide(1)"><img src="/images/image-product-1-thumbnail.jpg" alt="thumbnail-1"></div>
+                <div class="thumbnails" @click="currentSlide(2)"><img src="/images/image-product-2-thumbnail.jpg" alt="thumbnail-2"></div>
+                <div class="thumbnails" @click="currentSlide(3)"><img src="/images/image-product-3-thumbnail.jpg" alt="thumbnail-3"></div>
+                <div class="thumbnails" @click="currentSlide(4)"><img src="/images/image-product-4-thumbnail.jpg" alt="thumbnail-4"></div>
             </div>
         </div>
         <div class="description-wrapper" v-for="(product,ix) in products" :key="ix">
@@ -34,12 +34,12 @@
             <div class="description-action-wrapper">
                 <div class="description-action" style="">
                    
-                    <p  @click="decreaseItem"> <img src="/images/icon-minus.svg" alt=""></p>
+                    <p  @click="decreaseItem"> <img src="/images/icon-minus.svg" alt="minus-icon"></p>
                     <p > {{ counter }} </p>
-                    <p @click="increaseItem"> <img src="/images/icon-plus.svg" alt=""></p>
+                    <p @click="increaseItem"> <img src="/images/icon-plus.svg" alt="plus-icon"></p>
                 </div>
                 <div class="description-button" style="">
-                    <button style="" @click="addProductToCart(product)"><img src="/images/icon-cart-white.svg"> Add to cart</button>
+                    <button style="" @click="addProductToCart(product)"><img src="/images/icon-cart-white.svg" alt="cart"> Add to cart</button>
                 </div>
             </div>
             

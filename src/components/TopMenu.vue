@@ -2,20 +2,20 @@
   <header>
     <ul>
       <li class="icon-menu" @click="openMenu">
-        <img src="/images/icon-menu.svg" alt="" />
+        <img src="/images/icon-menu.svg" alt="menu" />
       </li>
-      <li class="logo"><img src="/images/logo.svg" alt="" /></li>
+      <li class="logo"><img src="/images/logo.svg" alt="logo" /></li>
       <li class="menus">Collections</li>
       <li class="menus">Men</li>
       <li class="menus">Women</li>
       <li class="menus">About</li>
       <li class="menus menu">Contact</li>
       <li class="shopping-cart">
-        <img src="/images/icon-cart.svg" alt="" @click="showCart" />
+        <img src="/images/icon-cart.svg" alt="cart" @click="showCart" />
         <span v-show="this.$store.getters.cartLength > 0">{{$store.getters.cartQuantity}}</span>
       </li>
       <li class="image-avatar">
-        <img src="/images/image-avatar.png" alt="" /> 
+        <img src="/images/image-avatar.png" alt="avatar" /> 
       </li>
     </ul>
     <div class="wrapper" v-show="show">
@@ -23,7 +23,7 @@
       <div class="sidebar">
         <ul>
           <li>
-            <img src="/images/icon-close.svg" alt="" @click="closeMenu" />
+            <img src="/images/icon-close.svg" alt="close" @click="closeMenu" />
           </li>
           <li>Collections</li>
           <li>Men</li>
@@ -48,13 +48,13 @@
             <img
               class="img-thumb"
               src="/images/image-product-1-thumbnail.jpg"
-              alt=""
+              alt="thumbnail"
             />
             <div style="">
               <p style="margin: 0">{{product.title}}</p>
               <p style="margin: 0">${{product.discounted_price}}.00 x {{product.quantity}} <b>${{total}}.00</b></p>
             </div>
-            <img src="/images/icon-delete.svg" alt="" style="height: 17px" @click="removeProduct(product)" />
+            <img src="/images/icon-delete.svg" alt="delete" style="height: 17px" @click="removeProduct(product)" />
           </div>
           <div class="checkout-button" style="padding: 1.4rem 1.4rem 0">
             <button style="width: 100%">Checkout</button>
