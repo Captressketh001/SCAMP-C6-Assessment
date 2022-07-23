@@ -65,7 +65,7 @@
         <div class="cart" style="height:172px">
           <h3>Cart</h3>
           <div 
-            style=    "display: flex;
+            style=    "display: flex; 
     align-items: center;
     justify-content: center;
     height: 95px;
@@ -75,13 +75,8 @@
             
             <div style="">
               <p style="margin: 0">Your cart is empty</p>
-              <!-- <p style="margin: 0">$125.00 x 3 <b>$375.00</b></p> -->
             </div>
-            <!-- <img src="/images/icon-delete.svg" alt="" style="height: 17px" /> -->
           </div>
-          <!-- <div class="checkout-button" style="padding: 1.4rem 1.4rem 0">
-            <button style="width: 100%">Checkout</button>
-          </div> -->
       </div>
     </div>
   </header>

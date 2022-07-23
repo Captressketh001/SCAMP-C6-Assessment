@@ -33,7 +33,8 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
+![](./screenshot-1440px.png)
+![](./screenshot-375.png)
 
 
 ### Links
@@ -53,25 +54,10 @@ Users should be able to:
 - Vue JS library
 
 
-<!-- ### What I learned
+### What I learned
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
+I used this project to learn Vuex, the state management library in Vue
 
-To see how you can add code snippets, see below:
-
-```html
-<h1>Some HTML code I'm proud of</h1>
-```
-```css
-.proud-of-this-css {
-  color: papayawhip;
-}
-```
-```js
-const proudOfThisFunc = () => {
-  console.log('🎉')
-}
-``` -->
 
 
 
@@ -88,17 +74,14 @@ Use this section to outline areas that you want to continue focusing on in futur
 
 **Note: Delete this note and replace the list above with resources that helped you during the challenge. These could come in handy for anyone viewing your solution or for yourself when you look back on this project in the future.** -->
 
-<!-- ## Author
+## Author
 
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
+- Website - [Oluwakemi Omoyeni](captressketh.netlify.app)
+- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/Captressketh001)
+- Twitter - [@capketh](https://www.twitter.com/capketh)
 
-**Note: Delete this note and add/remove/edit lines above based on what links you'd like to share.**
 
 ## Acknowledgments
 
-This is where you can give a hat tip to anyone who helped you out on this project. Perhaps you worked in a team or got some inspiration from someone else's solution. This is the perfect place to give them some credit.
+I acknowledge the special grit that made me stay committed to finishing this project
 
-**Note: Delete this note and edit this section's content as necessary. If you completed this challenge by yourself, feel free to delete this section entirely.**
- -->

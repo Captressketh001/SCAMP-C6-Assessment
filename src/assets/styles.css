@@ -79,6 +79,10 @@ header ul li.image-avatar > img{
     height: 30px; 
     width:30px;
 }
+header ul li.image-avatar > img:hover{
+    border: 1px solid hsl(26, 100%, 55%);
+    border-radius: 50%;
+}
 .wrapper .sidebar{
     background: hsl(0, 0%, 100%);
     position: fixed;
@@ -222,6 +226,7 @@ main > div.description-wrapper > div.description-price > div > p{
 }
 main > div.description-wrapper > div.description-price > s{
     color: hsl(220, 14%, 75%);
+    margin-top: -14px;
 }
 
 main > div.description-wrapper > div.description-action-wrapper{
@@ -246,13 +251,25 @@ main > div.description-wrapper > div.description-action-wrapper > div.descriptio
     border-radius: 5px; 
     border:none; 
     background-color:  hsl(26, 100%, 55%); 
-    color: hsl(0, 0%, 100%)
+    color: hsl(0, 0%, 100%);
+    font-weight:bold;
+    cursor: pointer;
+}
+.description-action p{
+    cursor: pointer;
+}
+main > div.description-wrapper > div.description-action-wrapper > div.description-button button img{
+    padding-right:12px; 
+    padding-top:-10px;
 }
 .previous, .next{
     display: none;
 }
 
 @media screen and (max-width: 768px){
+    main > div.description-wrapper > div.description-price > s{
+        margin-top: 0;
+    }
     .cart-wrapper{
         width: 90%;
         left: 6%;

@@ -37,7 +37,6 @@
                     <p  @click="decreaseItem"> <img src="/images/icon-minus.svg" alt=""></p>
                     <p > {{ counter }} </p>
                     <p @click="increaseItem"> <img src="/images/icon-plus.svg" alt=""></p>
-                    <!-- <p></p> -->
                 </div>
                 <div class="description-button" style="">
                     <button style="" @click="addProductToCart(product)"><img src="/images/icon-cart-white.svg"> Add to cart</button>
@@ -45,31 +44,11 @@
             </div>
             
         </div>
-        <!-- <div class="slider-wrapper" >
-            <div class="slider">
-                <img src="/images/image-product-1.jpg"  alt="">
-                <div>
-                    <div class="slider-image" > <img src="/images/image-product-1.jpg" alt=""></div>
-                    <div class="slider-image" style="display:none"> <img src="/images/image-product-2.jpg" alt=""></div>
-                    <div class="slider-image" style="display:none"> <img src="/images/image-product-3.jpg" alt=""></div>
-                    <div class="slider-image" style="display:none"> <img src="/images/image-product-4.jpg" alt=""></div>
-                </div>
-                    
-            
-               
-                    <div class="thumbnail-wrapper">
-                        <div class="thumbnails"><img src="/images/image-product-1-thumbnail.jpg" alt=""></div>
-                        <div class="thumbnails"><img src="/images/image-product-2-thumbnail.jpg" alt=""></div>
-                        <div class="thumbnails"><img src="/images/image-product-3-thumbnail.jpg" alt=""></div>
-                        <div class="thumbnails"><img src="/images/image-product-4-thumbnail.jpg" alt=""></div>
-                    </div>
-            </div>
-        </div> -->
+        
     </main>
 </template>
 
 <script>
-import * as $ from "jquery";
 export default {
     name: 'MainMenu',
     data (){
@@ -92,30 +71,6 @@ export default {
        decreaseItem(){
         this.$store.dispatch('decreaseItem')
       },
-      increaseQty(product, index){
-        this.$store.getters.cartProducts.forEach(i => {            
-            if (i.id == product.id) {
-              
-                  $('#qty'+ index).text(++(i.quantity))  
-                  this.updateCartLocalStorage()                 
-          } 
-        })
-    },
-    decreaseQty(product, index){
-        this.$store.getters.cartProducts.forEach(i => {            
-            if (i.id == product.id) {
-                if (i.quantity == 1){
-                    this.$store.getters.cartProducts.forEach((i, index) => {
-                        if (i.id == product.id) {
-                            this.$store.getters.cartProducts.splice(index, 1)               
-                        }
-                    });
-                }else{
-                    $('#qty'+ index).text(--(i.quantity))
-                }
-            }   
-        });
-    },
       addProductToCart(products){
         this.$store.dispatch('addProductToCart', products)
       },
@@ -129,22 +84,18 @@ export default {
           let i;
           let slides = document.getElementsByClassName("slides");
           let dots = document.getElementsByClassName("thumbnails");
-        //   let captionText = document.getElementById("caption");
           if (n > slides.length) {this.slideIndex = 1}
           if (n < 1) {this.slideIndex = slides.length}
           console.log(this.slideIndex);
 
           for (i = 0; i < slides.length; i++) {
               slides[i].style.display = "none";
-              // slides[i].style.display = "inline";
           }
           for (i = 0; i < dots.length; i++) {
               dots[i].className = dots[i].className.replace(" active", "");
           }
           slides[this.slideIndex-1].style.display = "block";
-          // slides[slideIndex-1].style.display = "inline";
           dots[this.slideIndex-1].className += " active";
-        //   captionText.innerHTML = dots[this.slideIndex-1].alt;
         }
     },
     mounted() {
@@ -153,38 +104,6 @@ export default {
     created(){
       this.$store.dispatch('fetchProducts')
     }
-//     var slideIndex = 1;
-// showSlides(slideIndex);
-
-// function plusSlides(n) {
-//   showSlides(slideIndex += n);
-// }
-
-// function currentSlide(n) {
-//   showSlides(slideIndex = n);
-// }
-
-// function showSlides(n) {
-//   var i;
-//   var slides = document.getElementsByClassName("slides");
-//   var dots = document.getElementsByClassName("slide-thumbnail");
-//   var captionText = document.getElementById("caption");
-//   if (n > slides.length) {slideIndex = 1}
-//   if (n < 1) {slideIndex = slides.length}
-//   console.log(slideIndex);
-
-//   for (i = 0; i < slides.length; i++) {
-//       slides[i].style.display = "none";
-//       // slides[i].style.display = "inline";
-//   }
-//   for (i = 0; i < dots.length; i++) {
-//       dots[i].className = dots[i].className.replace(" active", "");
-//   }
-//   slides[slideIndex-1].style.display = "block";
-//   // slides[slideIndex-1].style.display = "inline";
-//   dots[slideIndex-1].className += " active";
-//   captionText.innerHTML = dots[slideIndex-1].alt;
-// }
 }
 </script>
 <style scoped>
@@ -204,8 +123,6 @@ img {
 .container {
   background: red;
     position: fixed;
-    /* top: 70px;
-    left: -150px; */
     width: 100%;
     top: 0;
     left: 0;
@@ -214,18 +131,10 @@ img {
     transition: all 0.5s ease;
   
     display: flex;
-    /* justify-content: center; */
     flex-direction: column;
     align-items: center;
     gap: 20px;
 }
-
-/* .holder {
-  display: flex;
-  overflow-x: auto;
-  overflow-y: hidden;
-} */
-
 .holder::-webkit-scrollbar {
   display: none;
 }
@@ -233,10 +142,6 @@ img {
 /* Hide the images by default */
 .slides {
   display: none;
-  /* max-width: 1000px; */
-  /* width: 100%;
-  flex-shrink: 0;
-  height: 100%; */
 }
 
 .slides img {
@@ -292,15 +197,6 @@ img {
   border-radius: 0 30px 30px 0;
 }
 
-/* .next {
-  position: relative;
-  top: 50%;
-  transform: translate(0, -50%);
-  height: 34px;
-  width: 32px;
-  float: right;
-  margin-right: 12px;
-} */
 
 /* Container for image text */
 .caption-container {
@@ -331,16 +227,14 @@ img {
     gap: 20px;
     opacity: 0.6;
 }
-
-
-.thumbnails:hover {
-  /* opacity: 0.6; */
+.thumbnails:hover{
+  cursor: pointer;
+  opacity: 0.5;
 }
 .active.thumbnails{
-    opacity: 0.4;
+    opacity: 0.3;
 }
 .active.thumbnails img{
-    /* opacity: 0.4; */
     border: 2px solid hsl(26, 97%, 50%)
 ;
 }

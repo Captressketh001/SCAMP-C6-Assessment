@@ -58,11 +58,16 @@ export default createStore ({
         decreaseItem(context){
             context.commit('decreaseCounter')
         },
+        increase(context, product){
+            const cartItem = context.state.cart.find(item => item.id === product.id)
+            context.commit('increaseItemQuantity', cartItem)
+        },
         addProductToCart(context, product){
             const cartItem = context.state.cart.find(item => item.id === product.id)
             if(!cartItem){
                 context.commit('pushProductToCart', product.id)
-            } else{
+            } 
+            else{
                 context.commit('increaseItemQuantity', cartItem)
             }
         }
@@ -80,11 +85,11 @@ export default createStore ({
         pushProductToCart(state, productId){
             state.cart.push({
                 id:productId,
-                quantity:1
+                quantity:state.counter
             })
         },
         increaseItemQuantity(state, cartItem){
-                cartItem.quantity++
+                cartItem.quantity = state.counter
         }
     },
 })
